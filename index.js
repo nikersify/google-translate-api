@@ -100,15 +100,6 @@ function translate(text, opts) {
             }
 
             return result;
-        }).catch(function (err) {
-            var e;
-            e = new Error();
-            if (err.statusCode !== undefined && err.statusCode !== 200) {
-                e.code = 'BAD_REQUEST';
-            } else {
-                e.code = 'BAD_NETWORK';
-            }
-            throw e;
         });
     });
 }
